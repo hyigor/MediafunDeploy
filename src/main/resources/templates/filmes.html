@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{base :: head}"></head>
+
+<body>
+<div th:replace="~{base :: menu}"></div>
+<div th:replace="~{base :: nav}"></div>
+
+<div class="container">
+
+  <div th:replace="~{base :: titulo('Filmes')}"></div>
+
+  <div class="card mb-3" th:each="filme : ${filmes}">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-sm-8 mb-3">
+          <div class="row">
+            <div class="col-md-5">Titulo: <span th:text="${filme.titulo}"></span></div>
+            <div class="col-md-7" >Diretor: <span th:text="${filme.diretor}"></span></div>
+            <div class="col-md-9">Elenco príncipal: <span th:text="${filme.elencoPrincipal}"></span></div>
+            <div class="col-md-12">Duração do filme: <span th:text="${filme.duracao}"></span></div>
+            <div class="col-md-14">Gênero: <span th:text="${filme.duracao}"></span></div>
+            <div class="col-md-16">Ano lançamento: <span th:text="${filme.anoLancamento}"></span></div>
+            <div class="col-md-18">Páis de origem: <span th:text="${filme.pais}"></span></div>
+          </div>
+          <div>Sinopse:</div>
+          <div th:text="${filme.sinopse}">Sinopse:</div>
+        </div>
+        <div class="col-12 col-sm-4">
+          <div>
+            <img class="img" th:src="${filme.url}" src=""/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--  <div class="card" th:each="filme : ${filmes}">-->
+<!--    <div th:text="${filme.titulo}">Titulo:</div>-->
+<!--    <div th:text="${filme.diretor}">Diretor:</div>-->
+<!--    <div th:text="${filme.elencoPrincipal}">Elenco Principal:</div>-->
+<!--    <div th:text="${filme.duracao}">Duração do filme</div><span> Horas</span>-->
+<!--    <div th:text="${filme.genero}">Genero:</div>-->
+<!--    <div th:text="${filme.sinopse}">Sinopse:</div>-->
+<!--    <div th:text="${filme.anoLancamento}">Ano de lançamento:</div>-->
+<!--    <div>-->
+<!--      <img th:src="${filme.url}" src=""/>-->
+<!--    </div>-->
+<!--    <div>Ver avaliações</div>-->
+<!--  </div>-->
+<!--</div>-->
+
+</body>
+</html>

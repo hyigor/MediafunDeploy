@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{base :: head}"></head>
+
+<body>
+<div th:replace="~{base :: menu}"></div>
+<div th:replace="~{base :: nav}"></div>
+
+
+
+
+
+
+
+<div class="container">
+    <div th:replace="~{base :: titulo('Novo item:')}"></div>
+
+
+        <div class="card-body">
+            <h2>Qual tipo de item você deseja adicionar?</h2>
+            <div class="justify-content-between mb-3">
+                <a href="/item/formularioLivro"><button class="btn btn-primary my-2 my-sm-0">Livro</button></a>
+                <a href="/item/formularioSerie"><button class="btn btn-primary my-2 my-sm-0">Serie</button></a>
+                <a href="/item/formularioFilme"><button class="btn btn-primary my-2 my-sm-0">Filme</button></a>
+            </div>
+        </div>
+
+
+
+</div>
+
+</body>
+</html>

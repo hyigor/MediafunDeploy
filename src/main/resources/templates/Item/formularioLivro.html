@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{base :: head}"></head>
+
+<body>
+<div th:replace="~{base :: menu}"></div>
+<div th:replace="~{base :: nav}"></div>
+
+    <div class="container">
+
+        <div th:replace="~{base :: titulo('Novo livro:')}"></div>
+
+        <div class="card mt-3">
+        <form th:object="${requisicaoNovoLivro}" class="card-body" action="/item/novoLivro" method="POST">
+            <div class="form-group">
+                <label>Titulo</label>
+                <input th:field="*{nomeTitulo}" th:errorclass="is-invalid" class="form-control" placeholder="Titulo do Livro.">
+                <small>Informe o titulo do Livro</small>
+                <div class="invalid-feedback" th:errors="*{nomeTitulo}">
+                    Erros no nome do titulo
+                </div></div>
+            <div class="form-group">
+                <label>Autor</label>
+                <input th:field="*{nomeAutor}" th:errorclass="is-invalid" class="form-control" placeholder="Autor do Livro.">
+                <small>Informe o titulo do livro</small>
+                <div class="invalid-feedback" th:errors="*{nomeAutor}">
+                    Erros no nome do autor
+                </div> </div>
+            <div class="form-group">
+                <label>Editora</label>
+                <input th:field="*{editora}" th:errorclass="is-invalid" class="form-control" placeholder="Nome da editora.">
+                <small>Informe a editora do livro</small>
+                <div class="invalid-feedback" th:errors="*{editora}">
+                    Erros no nome da editora
+                </div></div>
+            <div class="form-group">
+                <label>País</label>
+                <input th:field="*{pais}" th:errorclass="is-invalid" class="form-control" placeholder="País do livro.">
+                <small>Informe o país no qual o livro foi escrita.</small>
+                <div class="invalid-feedback" th:errors="*{pais}">
+                    Erros no nome do país
+                </div></div>
+            <div class="form-group">
+                <label>Ano de Lançamento</label>
+                <input th:field="*{anoLancamento}" th:errorclass="is-invalid" class="form-control" type="number" placeholder="Ano de lançamento.">
+                <small>Informe o ano que o livro foi publicado.</small>
+                <div class="invalid-feedback" th:errors="*{anoLancamento}">
+                    Erros no ano de lançamento
+                </div></div>
+            <div class="form-group">
+                <label>Gênero</label>
+                <input th:field="*{genero}" th:errorclass="is-invalid" class="form-control" placeholder="Gênero do livro.">
+                <small>Informe o gênero do livro.</small>
+                <div class="invalid-feedback" th:errors="*{genero}">
+                    Erros no genero
+                </div></div>
+            <div class="form-group">
+                <label>Imagem</label>
+                <input th:field="*{urlImagem}" th:errorclass="is-invalid" class="form-control" placeholder="Url da imagem do livro">
+                <small>Copie a url de uma boa imagem do livro.</small>
+                <div class="invalid-feedback" th:errors="*{urlImagem}">
+                    Erros na url da imagem
+                </div></div>
+            <div class="form-group">
+                <label>Sinopse</label>
+                <textarea th:field="*{sinopse}" th:errorclass="is-invalid" class="form-control" placeholder="Digite aqui a sinopse do livro."></textarea>
+                <div class="invalid-feedback" th:errors="*{sinopse}">
+                    Erros na sinopse
+                </div></div>
+            <button class="btn btn-primary mt-2" type="submit">Cadastrar!</button>
+        </form>
+        </div>
+
+
+    </div>
+</body>
+</html>
