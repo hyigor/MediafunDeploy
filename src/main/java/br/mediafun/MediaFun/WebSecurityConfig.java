@@ -36,20 +36,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         ).csrf().disable();
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-        UserDetails user =
-                User.builder()
-                    .username("Fabio")
-                    .password(encoder.encode("fabio"))
-                    .roles("ADM")
-                    .build();
-        auth.jdbcAuthentication()
-                .dataSource(dataSource)
-                .passwordEncoder(encoder).withUser(user)
-               ;
+    @Bean
+    @Override
+    public UserDetailsService userDetailsService(){
+        UserDetails user = User.withDefaultPasswordEncoder().username("fabio").password("fabio").roles("ADM").build();
+        return new InMemoryUserDetailsManager(user);
     }
 
 
