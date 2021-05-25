@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 public class DatabaseConfig {
 
 
-        @Value("${spring.datasource.url}")
+        @Value("postgres://bjakctqhtmqclj:8e31264cc64bf1d08c4fffd46a3aa68e0ddb08b328d8b23fdfc89befce12ee0f@ec2-54-160-96-70.compute-1.amazonaws.com:5432/dbrr490nasf5gh\n")
         private String dbUrl;
 
         @Bean
