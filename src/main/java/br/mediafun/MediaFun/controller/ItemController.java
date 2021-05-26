@@ -27,25 +27,25 @@ public class ItemController {
     @GetMapping("escolhaTipo")
 //    @ResponseBody
     public String escolhaTipo(){
-        return "item/escolhaTipo";
+        return "/item/escolhaTipo";
     }
 
     @GetMapping("formularioLivro")
 //    @ResponseBody
     public String formularioLivro(RequisicaoNovoLivro requisicao){
-        return "item/formularioLivro";
+        return "/item/formularioLivro";
     }
 
     @GetMapping("formularioFilme")
 //    @ResponseBody
     public String formularioFilme(RequisicaoNovoFilme requisicao){
-        return "item/formularioFilme";
+        return "/item/formularioFilme";
     }
 
     @GetMapping("formularioSerie")
 //    @ResponseBody
     public String formularioSerie(RequisicaoNovaSerie requisicao){
-        return "item/formularioSerie";
+        return "/item/formularioSerie";
     }
 
 
