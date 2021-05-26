@@ -33,19 +33,19 @@ public class ItemController {
     @GetMapping("formularioLivro")
 //    @ResponseBody
     public String formularioLivro(RequisicaoNovoLivro requisicao){
-        return "/item/formularioLivro";
+        return "formularioLivro";
     }
 
     @GetMapping("formularioFilme")
 //    @ResponseBody
     public String formularioFilme(RequisicaoNovoFilme requisicao){
-        return "/item/formularioFilme";
+        return "formularioFilme";
     }
 
     @GetMapping("formularioSerie")
 //    @ResponseBody
     public String formularioSerie(RequisicaoNovaSerie requisicao){
-        return "/item/formularioSerie";
+        return "formularioSerie";
     }
 
 
@@ -53,30 +53,30 @@ public class ItemController {
     @PostMapping("novoLivro")
     public String novoLivro(@Valid RequisicaoNovoLivro requisicao, BindingResult result){
         if(result.hasErrors()){
-            return "item/formularioLivro";
+            return "formularioLivro";
         }
         Livro livro = requisicao.toLivro();
         itemRepository.save(livro);
-        return "item/escolhaTipo";
+        return "escolhaTipo";
     }
 
     @PostMapping("novoFilme")
     public String novoFilme(@Valid RequisicaoNovoFilme requisicao, BindingResult result){
         if(result.hasErrors()){
-            return "item/formularioFilme";
+            return "formularioFilme";
         }
         Filme filme = requisicao.toFilme();
         itemRepository.save(filme);
-        return "item/escolhaTipo";
+        return "escolhaTipo";
     }
 
     @PostMapping("novaSerie")
     public String novaSerie(@Valid RequisicaoNovaSerie requisicao, BindingResult result){
         if(result.hasErrors()){
-            return "item/formularioSerie";
+            return "formularioSerie";
         }
         Serie serie = requisicao.toSerie();
         itemRepository.save(serie);
-        return "item/escolhaTipo";
+        return "escolhaTipo";
     }
 }
