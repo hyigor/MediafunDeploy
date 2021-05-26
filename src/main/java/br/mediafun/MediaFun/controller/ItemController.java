@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
 
@@ -24,21 +25,25 @@ public class ItemController {
     private ItemRepository itemRepository;
 
     @GetMapping("escolhaTipo")
+    @ResponseBody
     public String escolhaTipo(){
         return "item/escolhaTipo";
     }
 
     @GetMapping("formularioLivro")
+    @ResponseBody
     public String formularioLivro(RequisicaoNovoLivro requisicao){
         return "item/formularioLivro";
     }
 
     @GetMapping("formularioFilme")
+    @ResponseBody
     public String formularioFilme(RequisicaoNovoFilme requisicao){
         return "item/formularioFilme";
     }
 
     @GetMapping("formularioSerie")
+    @ResponseBody
     public String formularioSerie(RequisicaoNovaSerie requisicao){
         return "item/formularioSerie";
     }
