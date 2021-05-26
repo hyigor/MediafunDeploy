@@ -27,7 +27,7 @@ public class ItemController {
     @GetMapping("escolhaTipo")
 //    @ResponseBody
     public String escolhaTipo(){
-        return "/item/escolhaTipo";
+        return "escolhaTipo";
     }
 
     @GetMapping("formularioLivro")
