@@ -1,5 +1,7 @@
 package br.mediafun.MediaFun.model;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
@@ -29,7 +31,7 @@ public class Item implements Serializable {
 
     protected String genero;
     @Lob
-    @Column( length = 100000 )
+    @Type(type = "org.hibernate.type.TextType")
     protected String sinopse;
 
     @Enumerated(EnumType.STRING)
